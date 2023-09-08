@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Doctor.h"
+#import "Patient.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        Doctor *doctor = [Doctor new];
+        Patient *patient = [Patient new];
+        doctor.delegate = patient;
+        [doctor givePill: @777];
     }
     return 0;
 }
